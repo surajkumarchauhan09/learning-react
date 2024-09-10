@@ -1,7 +1,9 @@
 import { createRoot } from "react-dom/client";
 import "./style.css";
-
-function Card(key, title, image, brand, price) {
+//We can pass any name of parameter but "props" is most common in React js
+function Card(props) {
+  //This is called destructuring method
+  const {key, title, image, brand, price} = props //Here we are destructuring the props object
   return (
     <div className="card" key={key}>
       <img src={image} alt="" />
@@ -22,13 +24,13 @@ fetch("https://dummyjson.com/products")
   .then((res) => res.json())
   .then((data) => {
     const container2 = data.products.map((product) => {
-      return Card(
-        product.id,
-        product.title,
-        product.images, //here you cannot change the order of this argument if you do so this will affect your page
-        product.brand, //so over come this this problem react introduce react component
-        product.price //that we read in next lecture
-      );
+      return Card({ //from here we are passing the props object
+        key: product.id,
+        title: product.title,
+        image: product.images, //now you can exchange the order of these key there will no any effect on your page
+        brand: product.brand,
+        price: product.price
+      });
     });
     root.render(<div className="container">{container2}</div>);
   });
