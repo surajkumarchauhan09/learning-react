@@ -1,0 +1,8 @@
+/* This is the correct way to use css create a .module.css file and write all the css in this
+file and import this css where you want to use it */
+.button {
+    background-color: aqua;
+}
+.text-Xl {
+    font-size: 4rem;
+}

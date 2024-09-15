@@ -1,0 +1,16 @@
+section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    align-items: center;
+}
+
+button img {
+    max-width: 40px;
+}
+/* Using CSS like this is is not good in React js because if you are using css like this then this 
+is applied on every element of every component that are matched with this element selector even though
+you have'nt import this css file in that component it will applied outside react also if this element
+ selector matched with that */
